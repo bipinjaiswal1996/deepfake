@@ -112,6 +112,10 @@ dataset. Now, these 10 frames are passed through this network , which will give
 many-to-one LSTM model as shown in the fig. to get the final result of the
 classification.
 
+![image3](https://user-images.githubusercontent.com/28837542/120933521-27742e00-c718-11eb-86b7-035814f011f8.png)
+
+
+![image2](https://user-images.githubusercontent.com/28837542/120933525-28a55b00-c718-11eb-966c-34607cc97eee.png)
 
 
 
