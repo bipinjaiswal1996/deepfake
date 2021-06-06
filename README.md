@@ -78,4 +78,8 @@ It is done by subtracting mean from each pixel and dividing the outcome by stand
 deviation. We have used standard deviation = (0.229, 0.224, 0.225) and mean = (0.485, 0.456,0.406) for normalization.
 
 
+### Pipeline
+
+![image1](https://user-images.githubusercontent.com/28837542/120933314-2f7f9e00-c717-11eb-9487-f5a068a78230.jpg)
+
 
