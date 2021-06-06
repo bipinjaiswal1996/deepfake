@@ -38,6 +38,8 @@ if we use this number of frames for every video, then it will become very
 computationally expensive. To deal with this, I have selected 10 frames from each
 video in which all frames are captured at equal intervals. (Since input video is of
 around 10-sec means at every 1-sec interval we capture a frame).
+
+
 Similar type of operation is performed on the FaceForensics++ dataset, even if the
 video length is not constant throughout all the videos. The only difference is that
 some more number of frames (>10) is captured for later preprocessing stages so
@@ -51,6 +53,8 @@ collected from the videos. For detecting faces in an image, different face
 recognition methods are used like Haar cascade classifier, dlib , and MTCNN
 in which the MTCNN performs the best , so MTCNN is used for the face detection
 purpose.
+
+
 In the FaceForensics++ dataset, in many videos, the person in the video is coming
 from a distance, in that case the face detected from that frame is not very clear, and
 the bounding box returned by the MTCNN is small in that frame as compared
@@ -93,6 +97,8 @@ enhance this model if we make it spatio-temporal so that it can spatio-temporal
 inconsistencies across the frames. Capsule Net is an enhanced and more robust
 version of CNN which will perform the feature extraction and detect the spatial
 inconsistencies within the frame.
+
+
 We can make it spatio-temporal by adding an LSTM to it that will detect the
 temporal inconsistencies across the frames.
 The question is how we can add an LSTM to the CapsNet model. We can add it
@@ -100,6 +106,8 @@ by removing the output capsules i.e, real and fake output capsules which are
 doing the classification. In that case, there will be no routing algorithm runs
 between the primary capsules and the output capsules as now there are no output
 capsules.
+
+
 In the CapsNet model, the input is passed through a VGG-19 pretrained model
 which gives a feature vector and then it is passed through the primary capsules ,
 each primary capsule will give a different feature vector. In the CapsNet model
@@ -123,6 +131,8 @@ The LSTM used in the model is single layer and it consists of 256 hidden units.
 The output produced by the last LSTM cell is passed through a fully connected layer
 followed by a softmax which will give a classification score between 0 and 1 i.e, real
 and fake.
+
+
 To compute the loss, we used Cross - Entropy Loss Loss function and Adam Optimizer
 is used to optimize the network with learning rate =0.0005 and β = 0.999.
 
