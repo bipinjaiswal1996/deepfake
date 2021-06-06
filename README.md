@@ -152,7 +152,7 @@ is used to optimize the network with learning rate =0.0005 and β = 0.999.
 From the analysis of models on both the datasets, CelebDF(v1) and FaceForensics++
 dataset, the performance of the proposed Capsule + LSTM models
 outperforms the CapsuleNet model proposed by Nguyen et al. by around 2%.
-The accuracy acheived on Celeb-DF dataset is 95.8 and on FaceForensic++ dataset is 95.94.
+The accuracy acheived on Celeb-DF dataset is 95.8 and on FaceForensics++ dataset is 95.94.
 
 
 This can be due to detection of spatio-temporal inconsistencies by the Capsule +LSTM
