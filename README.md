@@ -78,8 +78,46 @@ It is done by subtracting mean from each pixel and dividing the outcome by stand
 deviation. We have used standard deviation = (0.229, 0.224, 0.225) and mean = (0.485, 0.456,0.406) for normalization.
 
 
+
 ### Pipeline
 
 ![image1](https://user-images.githubusercontent.com/28837542/120933314-2f7f9e00-c717-11eb-9487-f5a068a78230.jpg)
 
 
+
+### Proposed Model
+
+The capsule Net model proposed by Nguyen et al. is a model which exploits the
+visual artifacts within a frame i.e it focuses on spatial inconsistencies. We can
+enhance this model if we make it spatio-temporal so that it can spatio-temporal
+inconsistencies across the frames. Capsule Net is an enhanced and more robust
+version of CNN which will perform the feature extraction and detect the spatial
+inconsistencies within the frame.
+We can make it spatio-temporal by adding an LSTM to it that will detect the
+temporal inconsistencies across the frames.
+The question is how we can add an LSTM to the CapsNet model. We can add it
+by removing the output capsules i.e, real and fake output capsules which are
+doing the classification. In that case, there will be no routing algorithm runs
+between the primary capsules and the output capsules as now there are no output
+capsules.
+In the CapsNet model, the input is passed through a VGG-19 pretrained model
+which gives a feature vector and then it is passed through the primary capsules ,
+each primary capsule will give a different feature vector. In the CapsNet model
+we are using three primary capsules (light network), each capsule is giving an
+output feature vector of 1x8, the output feature vector from all the primary
+capsules are stacked together to form a single feature vector of size 3x8.
+During the preprocessing stage , we capture 10 frames from each video of the
+dataset. Now, these 10 frames are passed through this network , which will give
+10 feature vectors of size 3x8. Now these 10 feature vectors are passed through a
+many-to-one LSTM model as shown in the fig. to get the final result of the
+classification.
+
+
+
+
+The LSTM used in the model is single layer and it consists of 256 hidden units.
+The output produced by the last LSTM cell is passed through a fully connected layer
+followed by a softmax which will give a classification score between 0 and 1 i.e, real
+and fake.
+To compute the loss, we used Cross - Entropy Loss Loss function and Adam Optimizer
+is used to optimize the network with learning rate =0.0005 and β = 0.999.
