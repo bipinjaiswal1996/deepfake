@@ -2,6 +2,10 @@
 
 Deepfake is a type of image or video forgery technique used to invade privacy, spread misinformation, that masks the truth using advanced technologies such as artificial intelligence and deep learning. With the advancement in the deep learning field and availability of data, these deepfakes looks so real that they are unable to detect by human as well as traditional detection methods.
 
+
+![Screenshot (66)](https://user-images.githubusercontent.com/28837542/120933111-3d80ef00-c716-11eb-8af8-a62a36cc8490.jpg)
+
+
 In this project, we have implemented a Capsule + LSTM based model for detecting deepfake, which focuses on detecting spatio-temporal inconsistencies across frames.
 
 This model is an extension of the the CapsuleNet model, which is proposed by Nguyen et al. in his paper “Use of a Capsule Network to detect fake images and videos”. CapsuleNet model focuses on detecting only the spatial artifacts within a single frame.
@@ -11,6 +15,7 @@ This model is an extension of the the CapsuleNet model, which is proposed by Ngu
 For comparison and evaluation of the model we have used Celeb-DF(v1) and FaceForensics++ dataset.
 
 Links for the datasets:
+
 Celeb-DF(v1) : http://www.cs.albany.edu/~lsw/celeb-deepfakeforensics.html
 
 FaceForensics++ : https://github.com/ondyari/FaceForensics/tree/master/dataset
@@ -71,3 +76,6 @@ Normalizing images is an important step which ensures that each input pixels wil
 a similar data distribution.
 It is done by subtracting mean from each pixel and dividing the outcome by standard
 deviation. We have used standard deviation = (0.229, 0.224, 0.225) and mean = (0.485, 0.456,0.406) for normalization.
+
+
+
