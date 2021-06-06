@@ -10,6 +10,8 @@ In this project, we have implemented a Capsule + LSTM based model for detecting 
 
 This model is an extension of the the CapsuleNet model, which is proposed by Nguyen et al. in his paper “Use of a Capsule Network to detect fake images and videos”. CapsuleNet model focuses on detecting only the spatial artifacts within a single frame.
 
+
+
 ### Dataset
 
 For comparison and evaluation of the model we have used Celeb-DF(v1) and FaceForensics++ dataset.
@@ -21,9 +23,13 @@ Celeb-DF(v1) : http://www.cs.albany.edu/~lsw/celeb-deepfakeforensics.html
 FaceForensics++ : https://github.com/ondyari/FaceForensics/tree/master/dataset
 
 
+
+
 ### Train-Test Split
 
 Training data(70%), Testing Data(15%) and Validation data(15%), which is used to train our model as well as evaluating its performance.
+
+
 
 
 ### Preprocessing
@@ -83,9 +89,11 @@ deviation. We have used standard deviation = (0.229, 0.224, 0.225) and mean = (0
 
 
 
+
 ### Pipeline
 
 ![image1](https://user-images.githubusercontent.com/28837542/120933314-2f7f9e00-c717-11eb-9487-f5a068a78230.jpg)
+
 
 
 
@@ -135,6 +143,8 @@ and fake.
 
 To compute the loss, we used Cross - Entropy Loss Loss function and Adam Optimizer
 is used to optimize the network with learning rate =0.0005 and β = 0.999.
+
+
 
 
 ### Results
